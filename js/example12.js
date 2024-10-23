@@ -15,17 +15,41 @@ document.addEventListener("DOMContentLoaded", function() {
       ];
     
     
-    colors.forEach(function(item) {
+    colors.forEach(function(item, index) {
         const li = document.createElement("li");
+        li.dataset.id = index;
         li.textContent = item;
         //console.log(li);
         ul.appendChild(li);
     })
-    console.log(ul)
+   
 
     // Alternativ 1 - Lägg en eventlyssnare på alla li-element
     
+    const listItems = document.querySelectorAll("li");
+
+    console.log(listItems)
+
+    listItems.forEach(function(item) {
+       item.addEventListener("click", function() {
+         console.log(`Du klickade på: `, item.textContent);
+         console.log(`Du klickade på: `, item.dataset.id);
+       })
+    })
+ 
+
     
     // Alternativ 2 - Använd eventdelegation
- 
+    // Man lägger endast en eventlyssnare på parent och sen "delegerar ner vilket event som skedde"
+
+    
+    ul.addEventListener("click", function(event) {
+        if(event.target.tagName === "LI") {
+            console.log(event.target.textContent);
+            console.log(event.target.dataset.id);
+          }
+    });
+
+
+
     });

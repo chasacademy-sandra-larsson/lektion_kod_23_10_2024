@@ -6,8 +6,16 @@ const person = {
     greet: function() {
       console.log("Hej, mitt namn är " + this.name);
     }
+ 
   };
   
   // Uppgift 1: Anropa greet-metoden.
   // Uppgift 2: Ändra namnet och anropa greet-metoden igen.
+
+ person.greet();
+
+ person.name = "Sandra";
+ console.log(person.greet());
+
+
 
