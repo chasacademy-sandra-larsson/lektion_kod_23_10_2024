@@ -11,5 +11,10 @@ const shoppingCart = {
   
   // Uppgift 1: Loopa genom arrayen av items och skriv ut namn och pris för varje artikel.
   // Uppgift 2: Beräkna det totala priset för alla artiklar och skriv ut resultatet.
+let total = 0;
+ shoppingCart.items.forEach(function(item) {
+  console.log(`${item.name}: ${item.price} SEK`);
+  total += item.price;
+ })
 
- 
+ console.log(`Total price: ${total}`);

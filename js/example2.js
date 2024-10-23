@@ -11,7 +11,8 @@ const car = {
   
   // Uppgift 1: Skriv ut bilens make, model och engine type.
   // Uppgift 2: Ändra motorns hästkrafter till 300 och skriv ut det uppdaterade objektet.
+console.log(car.make, car.model, car.engine);
+car.engine.horsepower = 300;
+console.log(car);
 
 
-
-// Uppgift 2: Ändra motorns hästkrafter till 300 och skriv ut objektet
